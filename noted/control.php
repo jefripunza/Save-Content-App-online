@@ -2,6 +2,7 @@
 date_default_timezone_set('Asia/Jakarta');
 $tanggal = date("l, G:i:s d-m-Y");
 $file_name = "content.json";
+$password = "123";
 
 if (isset($_POST['submit']) && isset($_POST['title']) && isset($_POST['content'])) {
     $json = new stdClass;
@@ -68,7 +69,7 @@ if (isset($_POST['submit']) && isset($_POST['title']) && isset($_POST['content']
         'title' => $title,
     ]);
 } else if (isset($_GET['pass'])) {
-    if ($_GET['pass'] == "jefripunza") {
+    if ($_GET['pass'] == $password) {
         $status = "ok";
     } else {
         die();
